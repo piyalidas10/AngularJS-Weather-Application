@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS</title>
+</head>
+<link href='style.css' rel="stylesheet"> 
+<body ng-app="jsbin">
+  <div ng-controller="DemoCtrl as vm">
+    <!--<h1>{{ vm.data | json }}</h1>-->
+	<h3>{{vm.city}},{{vm.country}}</h3>
+	<h5>Lat : {{vm.lat}} &nbsp;&nbsp;&nbsp; Lon : {{vm.lon}} </h5>
+	<table class="weather-forecast-list__table">
+		<tr ng-repeat="x in vm.data.list track by $index">
+			<td class="weather-forecast-list__item">
+				{{x.dt*1000 | date:"MMM d, y h:mm:ss a" }}
+				<img src="http://openweathermap.org/img/w/{{x.weather[0].icon}}.png" alt="forecast">
+			</td>
+			<td class="weather-forecast-list__item">
+				<span class="weather-forecast-list__day">{{x.temp.day}} °C</span>
+				<span class="weather-forecast-list__night">{{x.temp.night}} °C</span>
+				<i class="weather-forecast-list__naturalPhenomenon">{{x.weather[0].description}}</i>
+				<p>Max : {{x.temp.max}} °C &nbsp;&nbsp;Min : {{x.temp.min}} °C </p>
+				<p>{{x.speed}} m/s <br>clouds: {{x.clouds}} %,&nbsp;&nbsp;{{x.pressure}} hpa</p>
+			</td>
+		</tr>
+	</table>
+	
+
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

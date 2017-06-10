@@ -1,0 +1,46 @@
+*::after, *::before {
+    box-sizing: border-box;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+	border-spacing: 0;
+}
+.weather-forecast-list__table {
+    width: 650px;
+    border-collapse: collapse;
+    font: 400 14px/1.4 Roboto,Arial,sans-serif;
+}
+.weather-forecast-list__item {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+.weather-forecast-list__item > .weather-forecast-list__day, .weather-forecast-list__item > .weather-forecast-list__night {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.weather-forecast-list__day {
+    background-color: #f0ad4e;
+    margin-right: 5px;
+}
+.weather-forecast-list__night {
+    background-color: #999;
+    margin-right: 15px;
+}
+.weather-forecast-list__naturalPhenomenon {
+    font-style: italic;
+}
